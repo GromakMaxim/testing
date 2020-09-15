@@ -13,6 +13,7 @@ public class Main {
 
         System.out.println(newClient.findHacker());
         System.out.println("коммент 1");
+        System.out.println("коммент 2");
 
     }
 
