@@ -12,6 +12,7 @@ public class Main {
         newClient.fillEntriesMap(newLog);
 
         System.out.println(newClient.findHacker());
+        System.out.println("коммент 1");
 
     }
 
