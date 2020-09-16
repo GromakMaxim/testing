@@ -19,7 +19,7 @@ public class ServerLog {
                     if (string.contains("class=\"blob-code blob-code-inner js-file-line\">")) {//ищем в каждой строке подобную конструкцию
                         String subString = string.substring(string.indexOf(">") + 1, string.lastIndexOf("<"));//разделяем её по тегам
                         String ip = subString.split(":")[0];//забираем ip
-                        numberOfEntries.merge(ip, 1, (a,b) -> a + 1);
+                        numberOfEntries.merge(ip, 1, (a, b) -> a + 1);//если такой ip уже есть, увеличиваем его кол-во входов на 1
                     }
                     string = reader.readLine();
                 }
@@ -29,6 +29,7 @@ public class ServerLog {
         } catch (MalformedURLException ex) {
             ex.printStackTrace();
         }
+//        System.out.println("numberOfEntries " + numberOfEntries);
     }
 
     public Integer findIP(String ip) {//получить кол-во входов по ip
